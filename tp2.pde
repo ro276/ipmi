@@ -2,20 +2,21 @@
 PImage  lol,seg,ter,ser;
 int abajo,x,c,v;
 float um,p,b,fade; 
-String   u,T,TT,asesino,asesin,as1,as11,as2,as22,as3,as33,as4,as44,as5,as55,serie,prota1,pr2,pr3,s ;
+String   u,T,asesino,asesin,as1,as11,as2,as22,as3,as33,as4,as44,as5,as55,serie,prota1,pr2,pr3,s ;
 PFont impact,courie;
 color grey = color (170);
-
 void setup () {
 size (640,480);
                                                                                                                     
 seg= loadImage ("persona.jpg");
 ter= loadImage ("protas.jpg");
 lol = loadImage("lynch.jpg");
+
 ser=loadImage("intro - copia.jpg");
  courie= loadFont ("Courie.vlw");
 impact=loadFont ("Impact.vlw");
-u= "Donde toca \nel surgimientos \nde los \nasesinos \nen serie\n en los 70s\n\n mentes cazadas \n por\n los detectives";
+
+u= "Donde toca \nel surgimiento \nde los \nasesinos en serie\n en EEUU de\n los 70s\n \n Basada en \n hechos reales";
 serie="MIND HUNTER";
 T = "Dirigida \n por \n  David \n  Lynch" ;
 prota1="Jonathan Groff \nas Holden Ford";
@@ -43,35 +44,25 @@ s="Una serie protagonizada por 3 policias...";
     c=255;
     v=40;
     abajo= height;
- fade =map (width,-width, 0,width ,height);
+
 }
-
-
-void mousePressed(){
-
-if (mousePressed  ){
-  frameCount = v;
-     background(0);  
-}
-  }
 
 void draw(){
-frameRate (200);
+
       um++;
  x++;
  abajo--;
   rectMode(CORNER);
 
  
-
- 
+  println(frameCount,mouseX,mouseY);
+ if (frameCount >= 1);{
  
      
  fill(c,9);
- noStroke();
  textSize(50);
   text(serie,p-50,abajo, x,200 );
-
+ }
   if (frameCount >= 452){
     fill(255,5);
     text(serie,p-50,0,500,500);
@@ -90,7 +81,7 @@ text(T,8,7,500,500);
   }
   
   //slide2
-  if (frameCount>650){
+  if (frameCount>590){
     background(0,um*2+abajo);
   }if (frameCount >420){
     tint(120,142,178);
@@ -109,12 +100,14 @@ text (s,0,height+200+abajo*2,width,height);
   //slide3
   imageMode(CORNER);
   if (frameCount >1100){
-     image (seg,-2.6*width +um , 0,width,height);
+     image (seg,-2.6*width +um , 0,width ,height);
      textFont(impact);
      fill(c,70);
      textSize(40);
      text(u,-1.6*width+um,0,width,height);
- 
+  }
+  if (frameCount >1660){
+  image (seg,0,0,width,height);
  }
   if (frameCount > 1680 ){
     textFont(courie);
@@ -160,23 +153,33 @@ text (s,0,height+200+abajo*2,width,height);
   text(as55,500,380,570,160);
  }
   if(frameCount > 1760+v){
-    tint(c,c,c,c);
+    
     image(ser,0,0,width,height);
-    rectMode (CENTER);
+   
     noFill();
-    stroke(c);
+    stroke(25,28,41);
     strokeWeight (2);
-    rect(246,395,100,v);
-       } else if (mouseX > 246 && mouseX  < 246+100 && mouseY > 395 && mouseY < 395 + v){
+    rect(105,172,450,130);
+       }  if (frameCount > 1800 && mouseX > 105 && mouseX  < 105+450 && mouseY > 172 && mouseY < 172 + 130){
        noFill();
-       stroke(0);
+       stroke(c);
        strokeWeight(4);
-       rect(246,395,100,v);
+       rect(105,172,450,130);
        }
 }
   
-
+ void mousePressed(){
+ um++;
+ x++;
+ abajo--;
+if (mousePressed && frameCount > 1800  ){
+  frameCount = v;
+  noStroke();
+  background(0,2);
   
+}
+}
+
 
  
  
