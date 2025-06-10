@@ -1,4 +1,6 @@
-float rad= radians (45);
+//Rosario Arri _ 122595/8
+//Com1
+//
 
 float cl=255;
 PImage img;
