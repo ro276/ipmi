@@ -1,10 +1,12 @@
 //Rosario Arri 122595/8
 //Com1
-//
+//correcciones del profe: "La variable "mas" no debería estar en las funciones y también quedaron algunos valores constantes"
+//se remplazo la variable global "mas" en void sombra por la variable local "aumento++"
+//la variable "ii" fue eliminada, dejando simplemente height/2 como constante prestablecida
 
 
 PImage img;
-   int mas;
+   int mas; //solo para el void draw()
 
 
 void setup(){
@@ -18,13 +20,11 @@ void setup(){
 
 
    void agujero(float centerx, float centery){
-   float ii;
- 
-   ii=height/2;
+  
  
      
      fill(14);
-         translate(600,ii);
+         translate(600,height/2);
       ellipse(centerx,centery,240,150);
      
    }
@@ -82,20 +82,15 @@ ellipse(bob+xr,pa,15,9);
     } 
 
 
-void mousePressed(){
-  agujero(mouseX,mouseY);
-
-}
-
      
   void sombra(int xx,int yy,int s1, int s2){
- 
+ int aumento++;
      
-      float ll= map(mas,0,s1+150, s2+50, 20);
+      float ll= map(aumento,0,s1+150, s2+50, 20);
 noStroke();
  fill(44,25,29,ll);
  fill(9,ll);
-      ellipse(xx,yy,240+mas,140+mas);
+      ellipse(xx,yy,240+aumento,140+aumento);
 }
    
    
