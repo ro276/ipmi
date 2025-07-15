@@ -2,7 +2,7 @@
 //Com1
 //[13/07/25] correcciones del profe: "La variable "mas" no debería estar en las funciones y también quedaron algunos valores constantes"
 //se remplazo la variable global "mas" en void sombra por la variable local "aumento++"
-//la variable "ii" fue eliminada, dejando simplemente height/2 como constante prestablecida
+//la variable "ii" fue eliminada, dejando simplemente height/2 como constante ya prestablecida
 
 
 PImage img;
